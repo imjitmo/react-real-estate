@@ -1,0 +1,15 @@
+* {
+  font-family: "Noto Sans" !important;
+}
+
+/** Navbar **/
+.navbar {
+  text-transform: uppercase !important;
+  font-size: 1.1em !important;
+  font-weight: 500;
+}
+
+.active {
+  color: rgb(251, 146, 60) !important;
+  font-weight: 600 !important;
+}/*# sourceMappingURL=App.css.map */
