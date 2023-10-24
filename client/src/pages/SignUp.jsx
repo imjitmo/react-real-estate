@@ -76,6 +76,7 @@ export default function SignUp() {
       ...formData,
       [e.target.id]: e.target.value,
     });
+    onInputChange(e);
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -176,10 +177,7 @@ export default function SignUp() {
           id="password"
           name="password"
           className="border p-3 rounded-lg"
-          onChange={(e) => {
-            handleChange(e);
-            onInputChange(e);
-          }}
+          onChange={handleChange}
           onBlur={validateInput}
           required
         />
@@ -190,9 +188,7 @@ export default function SignUp() {
           id="confirmPass"
           name="confirmPass"
           className="border p-3 rounded-lg"
-          onChange={(e) => {
-            onInputChange(e);
-          }}
+          onChange={handleChange}
           onBlur={validateInput}
           required
         />
