@@ -2,6 +2,7 @@
 # J.re Properties - A MERN Real Estate App
 
 J.re Properties is a MERN Stack Real Estate App with Tailwind CSS
+Used firebase for image upload and Google OAuthX
 
 
 ## Installation
@@ -17,7 +18,7 @@ https://mern-reale-estate-app.onrender.com/
 ## Usage
 
 ```javascript
-A Simple Threads Clone App 
+A Simple Real Estate App where you can post your properties and transact with other people.
 ```
 
 
