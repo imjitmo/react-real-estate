@@ -17,9 +17,10 @@ Install my-project with npm
 https://mern-reale-estate-app.onrender.com/
 ## Usage
 
-```javascript
+
 A Simple Real Estate App where you can post your properties and transact with other people.
-```
+
+
 
 
 ## Run Locally
