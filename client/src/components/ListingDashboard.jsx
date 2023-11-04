@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export default function ListingDashboard() {
@@ -101,22 +102,25 @@ export default function ListingDashboard() {
         <table className="w-full text-sm text-left text-slate-700 mb-7">
           <thead className="text-xs text-gray-700 uppercase bg-slate-200">
             <tr>
-              <th scope="col" className="px-6 py-3">
+              <th width="5%" scope="col" className="px-6 py-3">
                 user id
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th width="5%" scope="col" className="px-6 py-3">
                 listing id
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th width="20%" scope="col" className="px-6 py-3">
+                Listing Name
+              </th>
+              <th width="15%" scope="col" className="px-6 py-3">
                 listing price
               </th>
-              <th scope="col" className="px-6 py-3">
-                discount price
+              <th width="15%" scope="col" className="px-6 py-3">
+                discounted price
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th width="5%" scope="col" className="px-6 py-3">
                 listing availability
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th width="5%" scope="col" className="px-6 py-3">
                 listing status
               </th>
               <th scope="col" className="px-6 py-3">
@@ -128,10 +132,20 @@ export default function ListingDashboard() {
             {listings && listings.length > 0 ? (
               records.map((listings) => (
                 <tr key={listings._id} className="bg-slate-100">
-                  <td className="px-6 py-4">{listings.userRef}</td>
-                  <td className="px-6 py-4">{listings._id}</td>
+                  <td className="px-6 py-4 text-blue-500 cursor-pointer truncate">
+                    <Link to={`/view-user/${listings.userRef}`}>{listings.userRef}</Link>
+                  </td>
+                  <td className="px-6 py-4 text-blue-500 cursor-pointer truncate">
+                    {' '}
+                    <Link to={`/listing/${listings._id}`}>{listings._id}</Link>
+                  </td>
+                  <td className="px-6 py-6 truncate">{listings.name}</td>
                   <td className="px-6 py-4">Php {listings.regularPrice.toLocaleString('en-US')}</td>
-                  <td className="px-6 py-4">Php {listings.discountPrice.toLocaleString('en-US')}</td>
+                  <td className="px-6 py-4">
+                    {listings.discountPrice > 0
+                      ? `Php ${listings.discountPrice.toLocaleString('en-US')}`
+                      : '-'}
+                  </td>
                   <td className="px-6 py-4">
                     {listings.isAvailable ? (
                       <p className="text-green-500">Available</p>

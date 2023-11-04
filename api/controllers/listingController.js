@@ -61,7 +61,7 @@ export const getListing = async (req, res, next) => {
   }
 };
 
-// Get Active Search Listings
+// Get Active Search Listings with pagination
 export const getActiveListings = async (req, res, next) => {
   try {
     const limit = parseInt(req.query.limit) || 10;

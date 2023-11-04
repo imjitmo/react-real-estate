@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-import cron from 'node-cron';
+// import cron from 'node-cron';
 
 import path from 'path';
 
@@ -18,8 +18,13 @@ import wishRouter from './routes/wishRoute.js';
 dotenv.config();
 
 // Restart server every 10minutes
-import pingHandler from './utils/cron.js';
-cron.schedule('*/13 * * * *', pingHandler);
+/*
+-Cron Job to restart a session every 10minutes
+-This is to cancel out the Render Sleep Mode
+-Commented to preserve free time on render
+*/
+// import pingHandler from './utils/cron.js';
+// cron.schedule('*/13 * * * *', pingHandler);
 
 // Server Setup and Routes
 const port = 5000; // Sub Port
